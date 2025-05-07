@@ -1,0 +1,32 @@
+/* Main app container styles */
+:host {
+  display: block;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Ensure smooth scrolling for the entire app */
+:root {
+  scroll-behavior: smooth;
+}
+
+/* Main content container */
+main {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Add padding to the top to account for the fixed header */
+app-home, app-about, app-skills, app-projects, app-contact {
+  display: block;
+}
+
+/* First section (home) needs extra padding for the fixed header */
+app-home {
+  padding-top: 0;
+}
+
+/* Other sections need padding to separate them */
+app-about, app-skills, app-projects, app-contact {
+  padding-top: 80px;
+}

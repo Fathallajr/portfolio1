@@ -1,0 +1,162 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  background-color: transparent;
+}
+
+.header.scrolled {
+  background-color: rgba(18, 18, 18, 0.95);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  padding: 15px 0;
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.header .logo a {
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.header .logo a:hover {
+  color: var(--primary-color);
+}
+
+.header nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header nav ul li {
+  margin-left: 30px;
+}
+
+.header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+  padding-bottom: 5px;
+}
+
+.header nav ul li a:hover {
+  color: var(--primary-color);
+}
+
+.header nav ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.header nav ul li a:hover::after {
+  width: 100%;
+}
+
+.header .menu-toggle {
+  display: none;
+  cursor: pointer;
+  width: 30px;
+  height: 20px;
+  position: relative;
+}
+
+.header .menu-toggle .bar {
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+}
+
+.header .menu-toggle .bar::before,
+.header .menu-toggle .bar::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.header .menu-toggle .bar::before {
+  top: -8px;
+}
+
+.header .menu-toggle .bar::after {
+  bottom: -8px;
+}
+
+.header .menu-toggle .bar.animate {
+  background-color: transparent;
+}
+
+.header .menu-toggle .bar.animate::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.header .menu-toggle .bar.animate::after {
+  bottom: 0;
+  transform: rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+  .header .menu-toggle {
+    display: block;
+  }
+  
+  .header nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 250px;
+    height: 100vh;
+    background-color: #121212;
+    padding-top: 80px;
+    transition: right 0.3s ease;
+  }
+  
+  .header nav.active {
+    right: 0;
+  }
+  
+  .header nav ul {
+    flex-direction: column;
+  }
+  
+  .header nav ul li {
+    margin: 0;
+    padding: 15px 30px;
+  }
+  
+  .header nav ul li a {
+    display: block;
+    font-size: 18px;
+  }
+}

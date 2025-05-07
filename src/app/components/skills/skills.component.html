@@ -1,0 +1,67 @@
+<section id="skills" class="skills">
+  <div class="container">
+    <h2 class="section-title fade-in" [class.visible]="isVisible">My Skills</h2>
+    
+    <div class="skills-content">
+      <div class="skills-text fade-in" [class.visible]="isVisible" [style.transition-delay]="'0.2s'">
+        <p>I've worked with a variety of technologies and frameworks to create responsive and dynamic web applications. Here are some of the key skills I've developed over the years:</p>
+      </div>
+      
+      <div class="skills-categories">
+        <!-- Frontend Skills -->
+        <div class="skill-category fade-in" [class.visible]="isVisible" [style.transition-delay]="'0.4s'">
+          <h3 class="category-title">Frontend</h3>
+          <div class="skills-grid">
+            <div class="skill-item" *ngFor="let skill of frontendSkills; let i = index" [style.transition-delay]="0.5 + (i * 0.1) + 's'">
+              <div class="skill-icon">
+                <i [class]="skill.icon"></i>
+              </div>
+              <div class="skill-info">
+                <h4>{{skill.name}}</h4>
+                <div class="skill-bar">
+                  <div class="skill-progress" [style.width]="skill.level + '%'"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Backend Skills -->
+        <div class="skill-category fade-in" [class.visible]="isVisible" [style.transition-delay]="'0.6s'">
+          <h3 class="category-title">Backend</h3>
+          <div class="skills-grid">
+            <div class="skill-item" *ngFor="let skill of backendSkills; let i = index" [style.transition-delay]="0.7 + (i * 0.1) + 's'">
+              <div class="skill-icon">
+                <i [class]="skill.icon"></i>
+              </div>
+              <div class="skill-info">
+                <h4>{{skill.name}}</h4>
+                <div class="skill-bar">
+                  <div class="skill-progress" [style.width]="skill.level + '%'"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Other Skills -->
+        <div class="skill-category fade-in" [class.visible]="isVisible" [style.transition-delay]="'0.8s'">
+          <h3 class="category-title">Tools & Others</h3>
+          <div class="skills-grid">
+            <div class="skill-item" *ngFor="let skill of otherSkills; let i = index" [style.transition-delay]="0.9 + (i * 0.1) + 's'">
+              <div class="skill-icon">
+                <i [class]="skill.icon"></i>
+              </div>
+              <div class="skill-info">
+                <h4>{{skill.name}}</h4>
+                <div class="skill-bar">
+                  <div class="skill-progress" [style.width]="skill.level + '%'"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,19 @@
+<header class="header" [class.scrolled]="scrolled">
+  <div class="container">
+    <div class="logo">
+      <a href="#">Portfolio</a>
+    </div>
+    <nav [class.active]="menuActive">
+      <ul>
+        <li><a href="#home" (click)="toggleMenu()">Home</a></li>
+        <li><a href="#about" (click)="toggleMenu()">About</a></li>
+        <li><a href="#skills" (click)="toggleMenu()">Skills</a></li>
+        <li><a href="#projects" (click)="toggleMenu()">Projects</a></li>
+        <li><a href="#contact" (click)="toggleMenu()">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="menu-toggle" (click)="toggleMenu()">
+      <div class="bar" [class.animate]="menuActive"></div>
+    </div>
+  </div>
+</header>

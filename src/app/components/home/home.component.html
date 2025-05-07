@@ -1,0 +1,43 @@
+<section id="home" class="home">
+  <div class="container">
+    <div class="home-content">
+      <div class="text-content">
+        <h4 class="subtitle fade-in" [class.visible]="isVisible">Hello, my name is</h4>
+        <h1 class="title fade-in" [class.visible]="isVisible" [style.transition-delay]="'0.2s'">
+          <span class="highlight">John Doe</span>
+        </h1>
+        <h2 class="description fade-in" [class.visible]="isVisible" [style.transition-delay]="'0.4s'">
+          I build things for the web.
+        </h2>
+        <p class="intro fade-in" [class.visible]="isVisible" [style.transition-delay]="'0.6s'">
+          I'm a software developer specializing in building exceptional digital experiences. 
+          Currently, I'm focused on building accessible, human-centered products.
+        </p>
+        <div class="cta-buttons fade-in" [class.visible]="isVisible" [style.transition-delay]="'0.8s'">
+          <a href="#projects" class="btn">View My Work</a>
+          <a href="#contact" class="btn btn-primary">Contact Me</a>
+        </div>
+      </div>
+      <div class="hero-image fade-in" [class.visible]="isVisible" [style.transition-delay]="'1s'">
+        <div class="image-container">
+          <div class="shape"></div>
+          <div class="profile-img">
+            <!-- Replace with your own image -->
+            <img src="assets/images/profile.png" alt="Profile Image" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-down fade-in" [class.visible]="isVisible" [style.transition-delay]="'1.2s'">
+      <a href="#about">
+        <div class="mouse">
+          <div class="wheel"></div>
+        </div>
+        <div>
+          <span class="arrow-down"></span>
+          <span class="arrow-down"></span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,183 @@
+.projects {
+  padding: var(--spacing-xl) 0;
+  background-color: rgba(17, 34, 64, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.projects::before {
+  content: '';
+  position: absolute;
+  top: -150px;
+  right: -150px;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(100, 255, 218, 0.05) 0%, rgba(100, 255, 218, 0) 70%);
+  z-index: 0;
+}
+
+.projects .projects-filter {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: var(--spacing-lg);
+  gap: var(--spacing-sm);
+}
+
+.projects .projects-filter button {
+  background-color: transparent;
+  border: 1px solid rgba(100, 255, 218, 0.3);
+  color: var(--text-color);
+  padding: 8px 20px;
+  border-radius: 30px;
+  font-size: var(--font-size-small);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.projects .projects-filter button:hover,
+.projects .projects-filter button.active {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border-color: var(--primary-color);
+}
+
+.projects .projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: var(--spacing-lg);
+  position: relative;
+  z-index: 1;
+}
+
+.projects .projects-grid .project-card {
+  background-color: rgba(17, 34, 64, 0.4);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.projects .projects-grid .project-card.hidden {
+  display: none;
+}
+
+.projects .projects-grid .project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
+}
+
+.projects .projects-grid .project-card:hover .project-image .project-overlay {
+  opacity: 1;
+}
+
+.projects .projects-grid .project-card .project-image {
+  position: relative;
+  overflow: hidden;
+  height: 220px;
+}
+
+.projects .projects-grid .project-card .project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.projects .projects-grid .project-card .project-image .project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(10, 25, 47, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.projects .projects-grid .project-card .project-image .project-overlay .project-links {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.projects .projects-grid .project-card .project-image .project-overlay .project-links .project-link {
+  width: 45px;
+  height: 45px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.projects .projects-grid .project-card .project-image .project-overlay .project-links .project-link:hover {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  transform: translateY(-5px);
+}
+
+.projects .projects-grid .project-card .project-content {
+  padding: var(--spacing-md);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.projects .projects-grid .project-card .project-content .project-title {
+  font-size: var(--font-size-medium);
+  font-weight: 600;
+  margin-bottom: var(--spacing-sm);
+  color: var(--text-color);
+}
+
+.projects .projects-grid .project-card .project-content .project-description {
+  font-size: var(--font-size-small);
+  color: var(--text-color-secondary);
+  margin-bottom: var(--spacing-md);
+  flex: 1;
+}
+
+.projects .projects-grid .project-card .project-content .project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.projects .projects-grid .project-card .project-content .project-tech span {
+  font-size: 12px;
+  background-color: rgba(100, 255, 218, 0.1);
+  color: var(--primary-color);
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.projects .projects-cta {
+  margin-top: var(--spacing-lg);
+  text-align: center;
+}
+
+.projects .projects-cta .btn i {
+  margin-right: 8px;
+}
+
+@media (max-width: 768px) {
+  .projects .projects-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
+
+@media (max-width: 576px) {
+  .projects .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}

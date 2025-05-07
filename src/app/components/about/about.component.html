@@ -1,0 +1,65 @@
+<section id="about" class="about">
+  <div class="container">
+    <h2 class="section-title fade-in" [class.visible]="isVisible">About Me</h2>
+    
+    <div class="about-content">
+      <div class="about-image fade-in slide-in-left" [class.visible]="isVisible" [style.transition-delay]="'0.2s'">
+        <div class="image-frame">
+          <!-- Replace with your own image -->
+          <img src="assets/images/about.jpg" alt="About Image">
+          <div class="frame-border"></div>
+        </div>
+      </div>
+      
+      <div class="about-text">
+        <p class="fade-in" [class.visible]="isVisible" [style.transition-delay]="'0.4s'">
+          Hello! I'm John, a passionate web developer with a keen interest in creating beautiful, functional websites and applications. My journey in web development began in 2018, and I've been hooked ever since.
+        </p>
+        
+        <p class="fade-in" [class.visible]="isVisible" [style.transition-delay]="'0.6s'">
+          I specialize in front-end development with a focus on modern JavaScript frameworks like Angular, React, and Vue. I'm also proficient in back-end technologies such as Node.js and Express.
+        </p>
+        
+        <p class="fade-in" [class.visible]="isVisible" [style.transition-delay]="'0.8s'">
+          When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or enjoying outdoor activities like hiking and photography.
+        </p>
+        
+        <div class="about-details fade-in" [class.visible]="isVisible" [style.transition-delay]="'1s'">
+          <div class="detail-item">
+            <span class="detail-icon">
+              <i class="fas fa-graduation-cap"></i>
+            </span>
+            <div class="detail-content">
+              <h4>Education</h4>
+              <p>BSc in Computer Science, University of Technology</p>
+            </div>
+          </div>
+          
+          <div class="detail-item">
+            <span class="detail-icon">
+              <i class="fas fa-briefcase"></i>
+            </span>
+            <div class="detail-content">
+              <h4>Experience</h4>
+              <p>5+ years in Web Development</p>
+            </div>
+          </div>
+          
+          <div class="detail-item">
+            <span class="detail-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </span>
+            <div class="detail-content">
+              <h4>Location</h4>
+              <p>San Francisco, CA</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="about-cta fade-in" [class.visible]="isVisible" [style.transition-delay]="'1.2s'">
+          <a href="assets/resume.pdf" class="btn" download>Download Resume</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
