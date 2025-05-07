@@ -1,32 +1,21 @@
 <section id="projects" class="projects">
   <div class="container">
-    <h2 class="section-title fade-in" [class.visible]="isVisible">My Projects</h2>
+    <h2 class="section-title fade-in visible">My Projects</h2>
     
-    <div class="projects-filter fade-in" [class.visible]="isVisible" [style.transition-delay]="'0.2s'">
-      <button 
-        *ngFor="let filter of filters" 
-        [class.active]="activeFilter === filter.value"
-        (click)="filterProjects(filter.value)">
-        {{filter.label}}
-      </button>
-    </div>
+  
+    
     
     <div class="projects-grid">
-      <div 
-        *ngFor="let project of filteredProjects; let i = index" 
-        class="project-card fade-in" 
-        [class.visible]="isVisible" 
-        [style.transition-delay]="0.3 + (i * 0.1) + 's'"
-        [class.hidden]="!project.visible">
-        
+      <!-- Project 1 -->
+      <div class="project-card fade-in visible">
         <div class="project-image">
-          <img [src]="project.image" [alt]="project.title">
+          <img src="project_1.png" alt="Machine Learning Fundamentals" onerror="this.src='assets/images/placeholder.jpg'; this.onerror=null;">
           <div class="project-overlay">
             <div class="project-links">
-              <a [href]="project.liveUrl" target="_blank" class="project-link" *ngIf="project.liveUrl">
+              <a href="https://demo-project-rho-jade.vercel.app/home" target="_blank" class="project-link">
                 <i class="fas fa-external-link-alt"></i>
               </a>
-              <a [href]="project.codeUrl" target="_blank" class="project-link" *ngIf="project.codeUrl">
+              <a href="https://github.com/Fathallajr/demo-project.git" target="_blank" class="project-link">
                 <i class="fab fa-github"></i>
               </a>
             </div>
@@ -34,18 +23,190 @@
         </div>
         
         <div class="project-content">
-          <h3 class="project-title">{{project.title}}</h3>
-          <p class="project-description">{{project.description}}</p>
+          <h3 class="project-title">Machine Learning Fundamentals</h3>
+          <p class="project-description">Comprehensive course covering machine learning algorithms, data preprocessing, and model evaluation.</p>
           
           <div class="project-tech">
-            <span *ngFor="let tech of project.technologies">{{tech}}</span>
+            <span>html</span>
+            <span>CSS</span>
+            <span>TypeScript</span>
+            <span>JavaScript</span>
+            <span>Angular19</span>
+          </div>
+          
+          
+        </div>
+      </div>
+      
+      <!-- Project 2 -->
+      <div class="project-card fade-in visible">
+        <div class="project-image">
+          <img src="project_2.png" alt="Web Development Bootcamp" onerror="this.src='assets/images/placeholder.jpg'; this.onerror=null;">
+          <div class="project-overlay">
+            <div class="project-links">
+              <a href="https://estigo.vercel.app/" target="_blank" class="project-link">
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+              <a href="https://github.com/Fathallajr/Estigo-project.git" target="_blank" class="project-link">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="project-content">
+          <h3 class="project-title">Web Development Bootcamp</h3>
+          <p class="project-description">Intensive full-stack web development course covering frontend and backend technologies.</p>
+          
+          <div class="project-tech">
+            <span>html</span>
+            <span>CSS</span>
+            <span>TypeScript</span>
+            <span>JavaScript</span>
+            <span>Angular19</span>
+          </div>
+          
+         
+        </div>
+      </div>
+      
+      <!-- Project 3 -->
+      <div class="project-card fade-in visible">
+        <div class="project-image">
+          <img src="project_3.png" alt="Data Science Specialization" onerror="this.src='assets/images/placeholder.jpg'; this.onerror=null;">
+          <div class="project-overlay">
+            <div class="project-links">
+              <a href="https://o6u-time-table.vercel.app/" target="_blank" class="project-link">
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+              <a href="https://github.com/Fathallajr/O6U-Time-Table.git" target="_blank" class="project-link">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="project-content">
+          <h3 class="project-title">Data Science Specialization</h3>
+          <p class="project-description">Advanced data science course focusing on statistical analysis, data visualization, and predictive modeling.</p>
+          
+          <div class="project-tech">
+            <span>html</span>
+            <span>CSS</span>
+            <span>TypeScript</span>
+            <span>JavaScript</span>
+            <span>Angular19</span>
+          </div>
+          
+          
+          <div class="project-category">
+            <span class="course-badge">Course</span>
           </div>
         </div>
       </div>
-    </div>
+      
+      <!-- Project 4 -->
+      <!-- <div class="project-card fade-in visible">
+        <div class="project-image">
+          <img src="assets/images/projects/uiux-design.jpg" alt="UI/UX Design Masterclass" onerror="this.src='assets/images/placeholder.jpg'; this.onerror=null;">
+          <div class="project-overlay">
+            <div class="project-links">
+              <a href="https://example.com/uiux-design" target="_blank" class="project-link">
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+              <a href="https://github.com/yourusername/uiux-design" target="_blank" class="project-link">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+        </div> -->
+        
+        <!-- <div class="project-content">
+          <h3 class="project-title">UI/UX Design Masterclass</h3>
+          <p class="project-description">Comprehensive design course covering user research, wireframing, prototyping, and usability testing.</p>
+          
+          <div class="project-tech">
+            <span>Figma</span>
+            <span>Adobe XD</span>
+            <span>Sketch</span>
+            <span>InVision</span>
+          </div>
+          
+          <div class="project-category">
+            <span class="course-badge">Course</span>
+          </div>
+        </div>
+      </div> -->
+      
+      <!-- Project 5 -->
+      <!-- <div class="project-card fade-in visible">
+        <div class="project-image">
+          <img src="assets/images/projects/angular-course.jpg" alt="Angular Framework Deep Dive" onerror="this.src='assets/images/placeholder.jpg'; this.onerror=null;">
+          <div class="project-overlay">
+            <div class="project-links">
+              <a href="https://example.com/angular-course" target="_blank" class="project-link">
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+              <a href="https://github.com/yourusername/angular-course" target="_blank" class="project-link">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+        </div> -->
+        
+        <!-- <div class="project-content">
+          <h3 class="project-title">Angular Framework Deep Dive</h3>
+          <p class="project-description">Advanced Angular course covering component architecture, state management, and performance optimization.</p>
+          
+          <div class="project-tech">
+            <span>Angular</span>
+            <span>TypeScript</span>
+            <span>RxJS</span>
+            <span>NgRx</span>
+          </div>
+          
+          <div class="project-category">
+            <span class="course-badge">Course</span>
+          </div>
+        </div>
+      </div> -->
+      
+      <!-- Project 6 -->
+      <!-- <div class="project-card fade-in visible">
+        <div class="project-image">
+          <img src="assets/images/projects/react-native.jpg" alt="Mobile App Development with React Native" onerror="this.src='assets/images/placeholder.jpg'; this.onerror=null;">
+          <div class="project-overlay">
+            <div class="project-links">
+              <a href="https://example.com/react-native" target="_blank" class="project-link">
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+              <a href="https://github.com/yourusername/react-native" target="_blank" class="project-link">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+         -->
+        <!-- <div class="project-content">
+          <h3 class="project-title">Mobile App Development with React Native</h3>
+          <p class="project-description">Comprehensive mobile development course for building cross-platform applications.</p>
+          
+          <div class="project-tech">
+            <span>React Native</span>
+            <span>JavaScript</span>
+            <span>Redux</span>
+            <span>Firebase</span>
+          </div>
+          
+          <div class="project-category">
+            <span class="course-badge">Course</span>
+          </div>
+        </div>
+      </div> -->
+    </div> 
     
-    <div class="projects-cta fade-in" [class.visible]="isVisible" [style.transition-delay]="'1s'">
-      <a href="https://github.com/yourusername" target="_blank" class="btn">
+    <div class="projects-cta fade-in visible">
+      <a href="https://github.com/fathallajr" target="_blank" class="btn">
         <i class="fab fa-github"></i> View More on GitHub
       </a>
     </div>
