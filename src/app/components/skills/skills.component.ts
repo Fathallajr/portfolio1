@@ -5,6 +5,7 @@ interface Skill {
   name: string;
   level: number;
   icon: string;
+  imagePath?: string;
 }
 
 @Component({
@@ -21,14 +22,14 @@ export class SkillsComponent implements OnInit {
 
   // Frontend skills
   frontendSkills: Skill[] = [
-    { name: 'HTML5', level: 95, icon: 'fab fa-html5' },
-    { name: 'CSS3', level: 90, icon: 'fab fa-css3-alt' },
-    { name: 'JavaScript', level: 85, icon: 'fab fa-js' },
-    { name: 'TypeScript', level: 80, icon: 'fab fa-js' },
-    { name: 'Angular', level: 85, icon: 'fab fa-angular' },
-    { name: 'React', level: 75, icon: 'fab fa-react' },
-    { name: 'Vue.js', level: 70, icon: 'fab fa-vuejs' },
-    { name: 'SASS/SCSS', level: 85, icon: 'fab fa-sass' }
+    { name: 'HTML5', level: 95, icon: 'fab fa-html5', imagePath: 'assets/images/skills/html5.png' },
+    { name: 'CSS3', level: 90, icon: 'fab fa-css3-alt', imagePath: 'assets/images/skills/css3.png' },
+    { name: 'JavaScript', level: 85, icon: 'fab fa-js', imagePath: 'assets/images/skills/javascript.png' },
+    { name: 'TypeScript', level: 80, icon: 'fab fa-js', imagePath: 'assets/images/skills/typescript.png' },
+    { name: 'Angular', level: 85, icon: 'fab fa-angular', imagePath: 'assets/images/skills/angular.png' },
+    { name: 'React', level: 75, icon: 'fab fa-react', imagePath: 'assets/images/skills/react.png' },
+    { name: 'Vue.js', level: 70, icon: 'fab fa-vuejs', imagePath: 'assets/images/skills/vue.png' },
+    { name: 'SASS/SCSS', level: 85, icon: 'fab fa-sass', imagePath: 'assets/images/skills/sass.png' }
   ];
 
   // Backend skills
@@ -51,6 +52,9 @@ export class SkillsComponent implements OnInit {
   ];
 
   ngOnInit(): void {
+    // Set isVisible to true immediately to ensure skills are displayed
+    this.isVisible = true;
+    
     // Wait for DOM to be ready
     setTimeout(() => {
       this.skillsSection = document.getElementById('skills');

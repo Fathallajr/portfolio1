@@ -96,8 +96,8 @@
   padding: var(--spacing-sm);
   border-radius: 5px;
   transition: all 0.3s ease;
-  opacity: 0;
-  transform: translateY(20px);
+  opacity: 1; /* Changed from 0 to 1 to make items visible by default */
+  transform: translateY(0); /* Changed from translateY(20px) to make items visible by default */
 }
 
 .skills .skills-content .skills-categories .skill-category .skills-grid .skill-item.visible {
@@ -110,10 +110,10 @@
 }
 
 .skills .skills-content .skills-categories .skill-category .skills-grid .skill-item .skill-icon {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   background-color: rgba(100, 255, 218, 0.1);
-  border-radius: 50%;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -121,6 +121,95 @@
   color: var(--primary-color);
   font-size: 18px;
   flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.skills .skills-content .skills-categories .skill-category .skills-grid .skill-item .skill-logo-container i {
+  font-size: 30px;
+  transition: transform 0.3s ease;
+  display: inline-block !important;
+  width: auto !important;
+  height: auto !important;
+  line-height: 1 !important;
+}
+
+.skills .skills-content .skills-categories .skill-category .skills-grid .skill-item:hover .skill-logo-container {
+  transform: translateY(-3px);
+  background-color: rgba(100, 255, 218, 0.2);
+}
+
+.skills .skills-content .skills-categories .skill-category .skills-grid .skill-item:hover .skill-logo-container i {
+  transform: scale(1.1);
+}
+
+/* Custom colors for specific technology icons */
+/* Frontend */
+.skills .skills-content .skills-categories .skill-category .skills-grid .skill-item .skill-logo-container .fa-html5 {
+  color: #E44D26;
+}
+
+.skills .skills-content .skills-categories .skill-category .skills-grid .skill-item .skill-logo-container .fa-css3-alt {
+  color: #264DE4;
+}
+
+.skills .skills-content .skills-categories .skill-category .skills-grid .skill-item .skill-logo-container .fa-js {
+  color: #F7DF1E;
+}
+
+.skills .skills-content .skills-categories .skill-category .skills-grid .skill-item .skill-logo-container .fa-angular {
+  color: #DD0031;
+}
+
+.skills .skills-content .skills-categories .skill-category .skills-grid .skill-item .skill-logo-container .fa-react {
+  color: #61DAFB;
+}
+
+.skills .skills-content .skills-categories .skill-category .skills-grid .skill-item .skill-logo-container .fa-vuejs {
+  color: #4FC08D;
+}
+
+.skills .skills-content .skills-categories .skill-category .skills-grid .skill-item .skill-logo-container .fa-sass {
+  color: #CC6699;
+}
+
+/* Backend */
+.skills .skills-content .skills-categories .skill-category .skills-grid .skill-item .skill-logo-container .fa-node-js {
+  color: #68A063;
+}
+
+.skills .skills-content .skills-categories .skill-category .skills-grid .skill-item .skill-logo-container .fa-database {
+  color: #3FA037;
+}
+
+.skills .skills-content .skills-categories .skill-category .skills-grid .skill-item .skill-logo-container .fa-php {
+  color: #777BB3;
+}
+
+/* Tools & Others */
+.skills .skills-content .skills-categories .skill-category .skills-grid .skill-item .skill-logo-container .fa-git-alt {
+  color: #F05032;
+}
+
+.skills .skills-content .skills-categories .skill-category .skills-grid .skill-item .skill-logo-container .fa-github {
+  color: #FFFFFF;
+}
+
+.skills .skills-content .skills-categories .skill-category .skills-grid .skill-item .skill-logo-container .fa-docker {
+  color: #2496ED;
+}
+
+.skills .skills-content .skills-categories .skill-category .skills-grid .skill-item .skill-logo-container .fa-box-open {
+  color: #8DD6F9;
+}
+
+.skills .skills-content .skills-categories .skill-category .skills-grid .skill-item .skill-logo-container .fa-mobile-alt {
+  color: #A4C639;
+}
+
+.skills .skills-content .skills-categories .skill-category .skills-grid .skill-item .skill-logo-container .fa-pencil-ruler {
+  color: #FF7C00;
 }
 
 .skills .skills-content .skills-categories .skill-category .skills-grid .skill-item .skill-info {
@@ -155,8 +244,8 @@
   }
 }
 
-/* Add this to make the skill items visible when the parent has .visible class */
-.skill-category.visible .skill-item {
+/* This ensures all skill items are visible */
+.skill-category .skill-item {
   opacity: 1;
   transform: translateY(0);
 }
